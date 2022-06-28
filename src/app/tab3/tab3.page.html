@@ -1,17 +1,32 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>
+			Tab 3
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">Search Player</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<div id="container">
+		<h1>Seach Player</h1>
+		<ion-input type="text" [(ngModel)]="name" text-right id="input"></ion-input>
+		<ion-button (click)="getData()" color="primary" class="ion-margin-top">Search</ion-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+		<div *ngFor="let player of dataPlayers.player">
+			<div class="d-flex justify-content-between mb-2">
+				<div class="d-flex align-items-center">
+					<div>
+						<h5>{{player.strPlayer}}</h5>
+						<p>{{player.strNationality}}</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </ion-content>

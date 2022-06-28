@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>
+			Tab 1
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">Forecast</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<div id="container">
+		<h1>List Sports</h1>
+		<!-- <div (click)="detailpage(data)"> -->
+		<div *ngFor="let sport of dataSports.sports">
+			<div class="d-flex justify-content-between mb-2">
+				<div class="d-flex align-items-center">
+					<img src="{{sport.strSportIconGreen}}" height="50px" class="me-1" />
+					<div>
+						<h5>{{sport.strSport}}</h5>
+						<p>{{sport.strSportDescription.substring(0, 200)}}</p>
+					</div>
+				</div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+				<!-- <div class="text-end">
+							<h5 class="text-success">{{data.main.temp}}&#8451;</h5>
+							<p class="text-success">{{data.main.temp_min}} - {{data.main.temp_max}}&#8451;</p>
+						</div> -->
+			</div>
+		</div>
+
+		<!-- </div> -->
+	</div>
 </ion-content>

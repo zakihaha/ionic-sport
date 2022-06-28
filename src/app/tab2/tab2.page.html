@@ -6,12 +6,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">Forecast</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<div id="container">
+    <h1>List Leagues</h1>
+		<div *ngFor="let league of dataLeagues.leagues">
+			<div class="d-flex justify-content-between mb-2">
+				<div class="d-flex align-items-center">
+					<div>
+						<h5>{{league.strLeague}}</h5>
+						<p>{{league.strSport}}</p>
+					</div>
+				</div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+			</div>
+		</div>
+	</div>
 </ion-content>
