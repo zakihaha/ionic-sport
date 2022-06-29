@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-title>
+			List Leagues
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
 	<ion-header collapse="condense">
 		<ion-toolbar>
-			<ion-title size="large">Tab 2</ion-title>
+			<ion-title size="large">List Leagues</ion-title>
 		</ion-toolbar>
 	</ion-header>
+	<div class="container mt-5">
+		<table class="table table-bordered">
+			<thead>
+				<tr class="bg-primary text-white">
+					<th class="text-center">League</th>
+					<th class="text-center">Sport Category</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let league of dataLeagues.leagues | paginate: { itemsPerPage: 9, currentPage: cp }">
+					<td>{{league.strLeague}}</td>
+					<td class="text-center">{{league.strSport}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="text-center">
+			<pagination-controls (pageChange)="cp = $event"></pagination-controls>
+		</div>
+
+	</div>
+	<!-- </ion-header>
 	<div id="container">
     <h1>List Leagues</h1>
 		<div *ngFor="let league of dataLeagues.leagues">
@@ -25,5 +47,5 @@
 
 			</div>
 		</div>
-	</div>
+	</div> -->
 </ion-content>

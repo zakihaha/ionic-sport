@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-	<ion-toolbar>
+	<ion-toolbar color="primary">
 		<ion-title>
-			Tab 3
+			Search Player
 		</ion-title>
 	</ion-toolbar>
 </ion-header>
@@ -12,10 +12,19 @@
 			<ion-title size="large">Search Player</ion-title>
 		</ion-toolbar>
 	</ion-header>
-	<div id="container">
-		<h1>Seach Player</h1>
-		<ion-input type="text" [(ngModel)]="name" text-right id="input"></ion-input>
-		<ion-button (click)="getData()" color="primary" class="ion-margin-top">Search</ion-button>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<ion-item>
+					<ion-label position="floating">Player Name</ion-label>
+					<ion-input type="text" [(ngModel)]="name"></ion-input>
+				</ion-item>
+			</div>
+			<div class="col-md-2">
+				<ion-button (click)="getData()" color="primary" class="ion-margin-top"><ion-icon name="search-outline"></ion-icon></ion-button>
+			</div>
+		</div>
+
 
 		<div *ngFor="let player of dataPlayers.player">
 			<div class="d-flex justify-content-between mb-2">
