@@ -15,10 +15,7 @@ export class Tab1Page implements OnInit {
 	ngOnInit(): void {
 		this.sportService.listAllSport().subscribe(result => {
 			var sportResult: any = result
-
 			this.dataSports = sportResult;
-
-			console.log(this.dataSports);
 		})
 	}
 }

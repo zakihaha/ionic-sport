@@ -27,14 +27,12 @@
 
 
 		<div *ngFor="let player of dataPlayers.player">
-			<div class="d-flex justify-content-between mb-2">
-				<div class="d-flex align-items-center">
+			<div class="d-flex align-items-center justify-content-between mb-2 mt-4">
 					<div>
 						<h5>{{player.strPlayer}}</h5>
 						<p>{{player.strNationality}}</p>
 					</div>
-				</div>
-
+				<ion-button (click)="detail(player)" color="success">See details</ion-button>
 			</div>
 		</div>
 	</div>

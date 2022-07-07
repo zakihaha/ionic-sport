@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Detail Player</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">List Sports</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<div class="container mt-5">
+		<div class="row">
+			<div *ngFor="let player of dataPlayers.players">
+				<div class="card mb-5 h-100">
+					<div class="card-body text-center">
+						<div class="mb-5">
+							<h2>{{player.strPlayer}}</h2>
+						</div>
+
+						<div class="mb-5">
+							<img src="{{player.strThumb}}" alt="">
+						</div>
+
+						<div class="mb-3">
+							<h4>Tanggal lahir:</h4>
+							<p>{{player.dateBorn}}</p>
+						</div>
+
+						<div class="mb-3">
+							<h4>Jenis olahraga:</h4>
+							<p>{{player.strSport}}</p>
+						</div>
+
+						<div class="mb-5">
+							<h4>Tim:</h4>
+							<p>{{player.strTeam}}</p>
+						</div>
+
+						<div class="mb-5">
+							<h4>Deskripsi</h4>
+							<p class="card-text">{{player.strDescriptionEN}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

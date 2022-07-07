@@ -1,0 +1,15 @@
+.ball {
+    position: absolute;
+    z-index: -1;
+    left: -30px;
+    top: 70px;
+    width: 90px;
+}
+
+.basketball {
+    position: absolute;
+    z-index: -1;
+    right: -35px;
+    bottom: 50px;
+    width: 100px;
+}

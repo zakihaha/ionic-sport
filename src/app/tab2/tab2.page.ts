@@ -15,10 +15,7 @@ export class Tab2Page implements OnInit {
 	ngOnInit(): void {
 		this.sportService.listAllLeagues().subscribe(result => {
 			var LeaguesResult: any = result
-
 			this.dataLeagues = LeaguesResult;
-
-			console.log(this.dataLeagues);
 		})
 	}
 }

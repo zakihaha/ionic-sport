@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { SportService } from '../services/sport.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SportService } from '../services/sport.service';
 })
 export class Tab3Page {
 
-	constructor(private sportService: SportService) { }
+	constructor(private sportService: SportService, private route: Router) { }
 
 	public dataPlayers = {}
 	public name = ''
@@ -16,10 +17,16 @@ export class Tab3Page {
 	getData() {
 		this.sportService.searchPlayer(this.name).subscribe(result => {
 			var playerResult: any = result
-
 			this.dataPlayers = playerResult;
-
-			console.log(this.dataPlayers);
 		})
+	}
+
+	detail(player): void {
+		let extras: NavigationExtras = {
+			queryParams: {
+				special: JSON.stringify(player.idPlayer)
+			}
+		}
+		this.route.navigate(['/detail'], extras);
 	}
 }
